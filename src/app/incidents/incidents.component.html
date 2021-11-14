@@ -1,0 +1,38 @@
+<div class ="container mt-5">
+    <!-- Webpage for functionality page -->
+    <h2>Incidents List</h2>
+    <!-- Add button -->
+    <a routerLink="add/0"><button class="btn btn-primary mt-5 mb-5">Issue New Incident</button></a>
+    <table class="table">
+        <thead>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Asset Tag</th>
+            <th>Location</th>
+            <th>Issue</th>
+            <th>Note</th>
+            <th>ETA</th>
+            <th>Progress</th>
+            <th>Name</th>
+        </thead>
+        <tbody>
+            <!-- ng loop for variable assignment -->
+            <tr *ngFor="let incident of incidents">
+            <td>{{ incident._id }}</td>
+            <td>{{ incident.email }}</td>
+            <td>{{ incident.phone }}</td>
+            <td>{{ incident.assetTag }}</td>
+            <td>{{ incident.location }}</td>
+            <td>{{ incident.issue }}</td>
+            <td>{{ incident.note }}</td>
+            <td>{{ incident.eta }}</td>
+            <td>{{ incident.progress }}</td>
+            <td>{{ incident.empName }}</td>
+            <!-- Functional buttons -->
+            <td><a [routerLink]="['edit', incident._id]">Edit</a></td>
+            <td><button (click)="onDelete(incident._id)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

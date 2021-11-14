@@ -1,0 +1,50 @@
+<!-- This is the list container!!!! -->
+<div class="container mt-5">
+    <h2>{{ header }}</h2>
+<!-- This button submits the form using ngForm -->
+    <form (ngSubmit)="onSubmit(f)" #f='ngForm'>
+        <div class="from-group">
+            <label for="">ID</label>
+            <input type="number" class="form-control" [ngModel]="incident._id" name="_id" required>
+        </div>
+        <div class="from-group">
+            <label for="">Email</label>
+            <input type="text" class="form-control" size="5" [ngModel]="incident.email" name="email" required>
+        </div>
+        <div class="from-group">
+            <label for="">Phone</label>
+            <input type="text" class="form-control" [ngModel]="incident.phone" name="phone" required>
+        </div>
+        <div class="from-group">
+            <label for="">Asset Tag</label>
+            <input type="text" class="form-control" [ngModel]="incident.assetTag" name="assetTag" required>
+        </div>
+        <div class="from-group">
+            <label for="">Location</label>
+            <input type="text" class="form-control" [ngModel]="incident.location" name="location" required>
+        </div>
+        <div class="from-group">
+            <label for="">Issue</label>
+            <textarea type="text" class="form-control" [ngModel]="incident.issue" name="issue" required></textarea>
+        </div>
+        <div class="from-group">
+            <label for="">Note</label>
+            <textarea type="text" class="form-control" [ngModel]="incident.note" name="note" required></textarea>
+        </div>
+        <div class="from-group">
+            <label for="">ETA</label>
+            <input type="text" class="form-control" [ngModel]="incident.eta" name="eta">
+        </div>
+        <div class="from-group">
+            <label for="">Progress</label>
+            <input type="text" class="form-control" [ngModel]="incident.progress" name="progress">
+        </div>
+        <div class="from-group">
+            <label for="">Name</label>
+            <input type="text" class="form-control" [ngModel]="incident.empName" name="empName" required>
+        </div>
+        <div class="from-group">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+    </form>
+</div>
